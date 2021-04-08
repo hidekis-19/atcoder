@@ -33,7 +33,7 @@ while True:
 
 
 #数字を配列から標準出力
-L=[str(a) for a in L_int]
+L=[str(a) for a in a]
 L=" ".join(L)
 #文字列を配列から標準出力
 L=' '.join(L)
@@ -50,7 +50,8 @@ i = i.split(' ',2)
 
 
 #インデックス番号と要素を取得するとき
-for i, name in enumerate(l):
+for i, name in enumerate(a):
     print(i, name)
 
-    
+#10進数の文字列を数値に変換
+l_si_i = [int(s) for s in l_si]
