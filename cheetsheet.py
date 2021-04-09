@@ -54,4 +54,4 @@ for i, name in enumerate(a):
     print(i, name)
 
 #10進数の文字列を数値に変換
-l_si_i = [int(s) for s in l_si]
+l_si_i = [int(s) for s in a]
