@@ -1,7 +1,7 @@
 S = input()
 
 ans_l = []
-ans = 0
+ans = []
 
 for i in range(len(S)):
     A = S.find('A',i)
@@ -21,18 +21,20 @@ ans_l = sorted(set(ans_l))
 
 if len(ans_l) >=2:
     for i in range(len(ans_l)):
-        ans = 1
         z = 1
         for j in range(len(ans_l)):
-            x = ans_l[i+j+1] - ans_l[i+j]
+            x = 0
+            if i+j+1 < len(ans_l):
+                x = ans_l[i+j+1] - ans_l[i+j]
             if x == 1:
                 z += 1
-        if z >= ans:
-            ans = z
+            else:
+                break
+        ans.append(z)
         
 elif len(ans_l) == 1:
-    ans = 1
+    ans.append(1)
+else:
+    ans.append(0)
 
-
-
-print(ans)
+print(max(ans))
