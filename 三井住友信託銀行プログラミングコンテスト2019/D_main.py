@@ -2,12 +2,22 @@ import itertools
 N = int(input())
 S = input()
 
-x = len(S)  -(N -3)
+num = ['0','1','2','3','4','5','6','7','8','9']
+ans = 0
 
-S_l = list(S)
+for i in num:
+    cnt = 0
+    S_l = list(S)
+    if i in S_l:
+        n1 = S_l.index(i)
+        for k in  num:
+            if k in S_l[int(n1)+1:]:
+                n2 = S_l[int(n1)+1:].index(k)
+                for j in  num:
+                    if (j in S_l[int(n1+n2)+2:]) :
+                        ans += 1
+            
+print(ans)
 
 
-c_list = list(itertools.combinations(S_l, x))
-
-print(len(set(c_list)))
 
