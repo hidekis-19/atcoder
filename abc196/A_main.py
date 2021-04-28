@@ -1,6 +1,5 @@
-x = input()
+a,b= map(int, input().split())
+c,d= map(int, input().split())
 
-y = list(x)
 
-z = y[1] + y[2] + y[0]
-print(z)
+print(b-c)
