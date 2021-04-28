@@ -1,5 +1,4 @@
 from collections import defaultdict
-from itertools import product
  
 N, M = map(int, input().split())
  
@@ -30,18 +29,3 @@ for i in range(2 ** N):
     if right == M:
         res +=1
 print(res)
-    
-
-
-
-
-
-
-
-        
-
-
-
-
-
-    
