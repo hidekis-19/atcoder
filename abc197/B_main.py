@@ -1,50 +1,47 @@
 import sys
 H,W,X,Y= map(int, input().split())
 
-S = [[c for c in l.strip()] for l in sys.stdin]
-x_left = X-2
-x_right = X
-y = X-1
-ans = 0
-l = S[y]
+S = []
+for i in range(H):
+    S.append(list(input()))
 
-x = Y-1
-y_top = X-2
-y_under = X
+ans = 1
 
-if S[y][x] == '.':
-    ans += 1
+x = X-1
+y = Y-1
 
-while x_left >= 0:
-    a = l[x_left]
-    if a == '.':
+
+#top 
+for i in range(1,X):
+    a = x -i
+    if S[a][y] == '.':
         ans += 1
-    x_left -= 1
+    else:
+        break
 
-while x_right < W:
-    a = l[x_right]
-    if a == '.':
+#left
+for i in range(1,Y):
+    b = y -i
+    if S[x][b] == '.':
         ans += 1
-    x_right += 1
+    else:
+        break
 
-
-while y_top >= 0:
-    ll =  S[y_top]
-    a = ll[x]
-    if a == '.':
+#right
+for i in range(1,W-Y+1):
+    b = y +i
+    if S[x][b] == '.':
         ans += 1
-    y_top -= 1
+    else:
+        break
 
-
-while y_under < H:
-    ll = S[y_under]
-    a = ll[x]
-    if a == '.':
+#bottom
+for i in range(1,H-X+1):
+    a = x+i
+    if S[a][y] == '.':
         ans += 1
-    y_under += 1
+    else:
+        break
 
 
 print(ans)
-
-
-
