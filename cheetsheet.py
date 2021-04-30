@@ -12,6 +12,7 @@ i = list(map(int, input().split()))
 #複数行に複数の入力値を取得する
 s = [input() for i in range(3)]
 
+num_list = list(map(int, input().split()))  # n個の数字がリストに格納される
 
 # データを取る
 #1行目を取得
