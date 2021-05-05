@@ -1,8 +1,8 @@
 import itertools
 L = int(input())
 
-a = list(range(L-11,L))
-b = list(range(1,12))
+a = range(L-11,L)
+b = range(1,12)
 x = 1
 y = 1
 
