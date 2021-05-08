@@ -17,6 +17,8 @@ elif len(n) == 2:
 else:
     for i in eights:
         if not Counter(str(i)) - n_cnt :
+            print(Counter(str(i)))
             ans = 'Yes'
 print(ans)
+print(n_cnt)
 
