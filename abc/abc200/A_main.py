@@ -1,10 +1,5 @@
-N = input()
+n = int(input())
 
-if int(N) <=100:
-    print(1)
+x = (n+99)//100
 
-elif N[-2:] == '00':
-    print(int(N[:-2]))
-else :
-    print(int(N[:-2]) +1)
-
+print(x)
