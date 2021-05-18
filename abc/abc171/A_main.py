@@ -1,3 +1,7 @@
-i = list(map(int, input().split())) 
+x = input()
 
-print(i.index(0)+1)
+ans = 'a'
+
+if x.isupper():
+    ans = 'A'
+print(ans)
