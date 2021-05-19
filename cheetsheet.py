@@ -56,3 +56,7 @@ for i, name in enumerate(a):
 
 #10進数の文字列を数値に変換
 l_si_i = [int(s) for s in a]
+
+
+#リストで一致する要素のインデックスをすべて返す
+indexes = [i for i, x in enumerate(list) if x == 1]
