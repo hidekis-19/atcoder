@@ -61,6 +61,13 @@ l_si_i = [int(s) for s in a]
 #リストで一致する要素のインデックスをすべて返す
 indexes = [i for i, x in enumerate(list) if x == 1]
 
+#10進数をn変数に変換
+#X...変換する値。n...変数
+def Base_10_to_n(X, n):
+    if (int(X/n)):
+        return Base_10_to_n(int(X/n), n)+str(X%n)
+    return str(X%n)
+
 """
 実装するときの注意メモ
 　・桁が多い時の割り算は//を使う
