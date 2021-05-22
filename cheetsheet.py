@@ -56,3 +56,22 @@ for i, name in enumerate(a):
 
 #10進数の文字列を数値に変換
 l_si_i = [int(s) for s in a]
+
+
+#リストで一致する要素のインデックスをすべて返す
+indexes = [i for i, x in enumerate(list) if x == 1]
+
+#10進数をn変数に変換
+#X...変換する値。n...変数
+def Base_10_to_n(X, n):
+    if (int(X/n)):
+        return Base_10_to_n(int(X/n), n)+str(X%n)
+    return str(X%n)
+
+"""
+実装するときの注意メモ
+　・桁が多い時の割り算は//を使う
+　　掛け算したり、割り算をするとfloatで持とうとするから桁あふれが起きる可能性がある
+　・inputが多い時はとりあえずリスト等に入れてから処理をする
+　　inputの処理に合わせて、処理をするとTLEになる可能性がある abc164 c
+"""
