@@ -68,6 +68,10 @@ def Base_10_to_n(X, n):
         return Base_10_to_n(int(X/n), n)+str(X%n)
     return str(X%n)
 
+#最小公倍数
+import math
+int(a * b / math.gcd(a, b))
+
 """
 実装するときの注意メモ
 　・桁が多い時の割り算は//を使う
@@ -76,4 +80,5 @@ def Base_10_to_n(X, n):
 　　inputの処理に合わせて、処理をするとTLEになる可能性がある abc164 c
   ・数えあげはcollections.Counter(A)を使う
   　量が多い時にfor文でとかで回すとTLEになりがち abc154c,155c
+  ・2重ループにするとTLEになりそうなときは、どうにかして足算になるようにする
 """
