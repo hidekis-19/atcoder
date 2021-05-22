@@ -81,4 +81,5 @@ int(a * b / math.gcd(a, b))
   ・数えあげはcollections.Counter(A)を使う
   　量が多い時にfor文でとかで回すとTLEになりがち abc154c,155c
   ・2重ループにするとTLEになりそうなときは、どうにかして足算になるようにする
+  ・NGのときは制約の境界値を気にする　abc157c
 """
