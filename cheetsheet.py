@@ -72,6 +72,19 @@ def Base_10_to_n(X, n):
 import math
 int(a * b / math.gcd(a, b))
 
+#最小公倍数nこのとき
+import functools
+def euclid(a, b):
+    if b == 0:
+        return a
+    else:
+        return euclid(b, a%b)
+def gcd(nums):
+    return functools.reduce(euclid, nums)
+
+n = int(input())
+A = list(map(int,input().split()))
+
 """
 実装するときの注意メモ
 　・桁が多い時の割り算は//を使う
