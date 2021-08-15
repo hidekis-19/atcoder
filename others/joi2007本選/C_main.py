@@ -6,7 +6,6 @@ L = []
 for _ in range(N):
     x,y = map(int,input().split())
     L.append((x,y))
-L.sort(key=lambda x:(x[0], x[1]))
 L = set(L)
 ans = 0
 for p1,p2 in combinations(L,2):
