@@ -1,0 +1,2 @@
+w = int(input())
+
