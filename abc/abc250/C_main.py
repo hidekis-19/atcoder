@@ -5,13 +5,16 @@ x_list = []
 for i in range(q):
     x_list.append(int(input()))
     
-ans_list = list(range(1,n+1))
+val = list(range(1,n+1))
+pos = list(range(1,n+1))
 
 for x in x_list:
-    s = ans_list.index(x)
+    s = pos[x-1] -1
     if s != n-1:
-        ans_list[s+1],ans_list[s] = x,ans_list[s+1]
+        val[s+1],val[s] = x,val[s+1]
+        pos[val[s]-1],pos[val[s+1]-1] = pos[val[s+1]-1],pos[val[s]-1]
     else:
-        ans_list[s],ans_list[s-1] = ans_list[s-1],x
+        val[s],val[s-1] = val[s-1],x
+        pos[val[s]-1],pos[val[s-1]-1] = pos[val[s-1]-1],pos[val[s]-1]
 
-print(' '.join(map(str,ans_list)))
+print(' '.join(map(str,val)))
