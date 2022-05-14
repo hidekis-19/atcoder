@@ -1,18 +1,41 @@
 import bisect
 n = int(input())
-s_list = []
+num_list = []
 
-for i in range(2,int(n**(1/3)+1)+1):
-    for j in range(2, i):
-        if i % j == 0:
-            break
-    else:
-        s_list.append(i)
+def primeNumberCreate():
+    primeList = [2]  # 2以下の素数リストを作成
+    maxNumber = 1000005 # 1000以下の数字をチェック
+    for x in range(3, maxNumber):
+        for y in primeList:
+            if x % y == 0:
+                break
+        else:
+            primeList.append(x)  # 割り切れるものがなければリストに追加
+    return primeList
 
+def indentAdjustment(primeNumbers): # インデント調節のため
+    n_list = []
+    count = 0
+    for num in primeNumbers:
+        n_list.append(num)
+        count += 1
+        if count > 9:
+            print(' ')
+            count = 0
+    return n_list
+
+primeNumbers = primeNumberCreate()
+n_list = indentAdjustment(primeNumbers)
 ans = 0
-for s in s_list:
-    x = int(n //(s**3))
-    y = s_list.index(s)
-    print(s**3,x,s_list[:y])
-    ans+= bisect.bisect(s_list[:y],x)
+
+for i,a in enumerate(n_list):
+    if a >=n:
+        break
+    for j,b in enumerate(num_list):
+        if i < j and n <= a*(b**3):
+            ans +=1
 print(ans)
+            
+             
+    
+        
