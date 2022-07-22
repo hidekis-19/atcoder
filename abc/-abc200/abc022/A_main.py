@@ -2,7 +2,7 @@ n,s,t = map(int,input().split())
 w = int(input())
 A = []
 
-for i in range(n):
+for i in range(n-1):
     A.append(int(input()))
     
 ans = 0
